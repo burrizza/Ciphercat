@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ciphercat - Options</title>
+		<link rel="stylesheet" type="text/css" href="options.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	</head>
+	<body>
+		<!-- add add masterkey start -->
+		<header class="header-options">
+			<!-- <span>head</span> -->
+		</header>
+		<main class="main-options">
+			<div id="div-options-addmkey" class="div-options">
+				<form class="form-options">
+					<div class="div-form-options">
+						<div class="div-form-options-row">
+							<h3>Change your masterkey:</h3>
+						</div>
+						<div class="div-form-options-row">
+							<br>
+						</div>
+						<div class="div-form-options-row">
+							<label for="inp-addmkey-pass-curr">Current Masterkey</label>
+							<input type="password" id="inp-addmkey-pass-curr" required placeholder="Please insert current key">
+							<label for="inp-addmkey-pass-new">New Masterkey</label>
+							<input type="password" id="inp-addmkey-pass-new" required placeholder="Please insert your new key">
+							<label for="inp-addmkey-pass-new2">New Masterkey again</label>
+							<input type="password" id="inp-addmkey-pass-new2" required placeholder="Please insert your new key again">
+						</div>
+					</div>
+					<button id="but-addmkey-add" type="button"><span>Change Key</span></button>
+					<div class="div-form-log" id="div-form-log-options-changemkey">
+						<span id="span-form-log-options-changemkey">error</span>
+					</div>
+				</form>
+				<hr>
+			</div>
+			<div class="div-form-log" id="div-form-log-options">
+				<span id="span-form-log-options">error</span>
+			</div>
+		</main>		
+		<footer class="footer-options">
+			<div>
+				<!-- <span id="span-logger">foot</span> -->
+			</div>
+		</footer>
+		<script src="options.js"></script>
+	</body>
+</html>

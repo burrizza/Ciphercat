@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ciphercat</title>
+		<link rel="stylesheet" type="text/css" href="popup.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	</head>
+	<body>
+		<div id="div-popup-index" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<div class="div-main-pop-grp1"><!-- <span>body</span> --></div>
+				<button class="but-main-pop-grp2" id="but-index-encrypt"><span>Encrypt</span></button>
+				<button class="but-main-pop-grp2" id="but-index-decrypt"><span>Decrypt</span></button>
+				<button class="but-main-pop-grp3" id="but-index-settings"><span>Settings</span></button>
+				<div class="but-main-pop-grp4">
+					<div class="div-form-log" id="div-form-log-popup">
+						<span id="span-form-log-popup">error</span>
+					</div>
+				</div>
+			</main>
+			<footer class="footer-popup">
+				<!-- <span id="span-logger">foot</span> -->
+			</footer>
+		</div>
+		<!-- error div start -->
+		<div id="div-popup-error" class="div-popup">
+			<div></div>
+			<div>
+			<h1>Error</h1>
+			<span>Sorry, something went wrong...</span>
+			<br>
+			<span>It seems that you have found a bug.</span>
+			<span>You can report me at Github if you want.</span>
+			<br><br>
+			<span id="span-error"></span>
+			</div>
+			<div></div>
+		</div>
+		<!-- settings div start -->
+		<div id="div-popup-settings" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+				<main class="main-popup">
+					<div class="div-main-pop-grp1"><!-- <span>body</span> --></div>
+					<button class="but-main-pop-grp2" id="but-settings-addkey"><span>Add Key</span></button>
+					<button class="but-main-pop-grp2" id="but-settings-listkeys"><span>List Keys</span></button>
+					<button class="but-main-pop-grp4" id="but-settings-back"><span>Back</span></button>
+				</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- settings add key start -->
+		<div id="div-popup-addkey" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="form-popup">
+					<div class="div-form-popup">
+						<div class="div-form-popup-row">
+							<label for="inp-addkey-name">Name<span aria-label="required">*</span></label>
+							<input type="text" required id="inp-addkey-name" placeholder="enter the name of the key bundle.">
+						</div>
+						<div class="div-form-popup-row">
+							<label for="inp-addkey-desc">Description</label>
+							<input type="text" id="inp-addkey-desc" placeholder="enter a short description about the key bundle.">
+						</div>
+						<div class="div-form-popup-row">
+							<label for="inp-addkey-pass">Passphrase</label>
+							<input type="password" id="inp-addkey-pass" placeholder="used to secure the Private Key and should kept secret and safe.">
+						</div>
+						<div class="div-form-popup-row-50col">
+							<label for="txt-addkey-privateKey">Private Key</label>
+							<textarea id="txt-addkey-privateKey" placeholder="used for decryption and should kept secret and safe. Use &quot;Generate Keys&quot; button or add an already existing key manually."></textarea>
+						</div>
+						<div class="div-form-popup-row-50col">
+							<label for="txt-addkey-publicKey">Public Key<span aria-label="required">*</span></label>
+							<textarea id="txt-addkey-publicKey" required placeholder="used for encryption and could be hold public. Use &quot;Generate Keys&quot; button or add an already existing key manually."></textarea>
+						</div>
+						<div class="div-form-log" id="div-form-log-popup-addkey">
+							<span id="span-form-log-popup-addkey">error</span>
+						</div>
+					</div>
+					<input type="file" id="inp-popup-addkey" accept=".json" style="display:none" />
+					<button id="but-addkey-generate" type="button"><span>Generate Keys</span></button>
+					<button id="but-addkey-import" type="button"><span>Paste JSON</span></button>
+					<button id="but-addkey-add" type="button"><span>Add Keys</span></button>
+				</form>
+			<button class="but-main-pop-grp4" id="but-addkey-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- add add masterkey start -->
+		<div id="div-popup-addmkey" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="form-popup">
+					<div class="div-form-popup">
+						<div class="div-form-popup-row">
+							<span>Please enter the Masterkey which should be used to encrypt your locally stored data.</span>
+						</div>
+						<div class="div-form-popup-row">
+							<br>
+						</div>
+						<div class="div-form-popup-row">
+							<label for="inp-addmkey-pass">Masterkey</label>
+							<input type="password" id="inp-addmkey-pass" required placeholder="used to secure all data and should kept secret and safe.">
+							<label for="inp-addmkey-pass2">Masterkey again</label>
+							<input type="password" id="inp-addmkey-pass2" required placeholder="please enter your chosen key again.">
+						</div>
+					</div>
+					<button id="but-addmkey-add" type="button"><span>Add Key</span></button>
+					<div class="div-form-log" id="div-form-log-popup-addmkey">
+						<span id="span-form-log-popup-addmkey">error</span>
+					</div>
+				</form>
+			<button class="but-main-pop-grp4" id="but-addmkey-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- add enter masterkey start -->
+		<div id="div-popup-entermkey" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="form-popup">
+					<div class="div-form-popup">
+						<div class="div-form-popup-row">
+							<span>Please enter your Masterkey which is used to encrypt all stored data.</span>
+						</div>
+						<div class="div-form-popup-row">
+							<br>
+						</div>
+						<div class="div-form-popup-row">
+							<label for="inp-entermkey-pass">Masterkey</label>
+							<input type="password" id="inp-entermkey-pass" required placeholder="used to secure all data and should kept secret and safe.">
+						</div>
+					</div>
+					<button id="but-entermkey-add" type="button"><span>Submit Key</span></button>
+					<div class="div-form-log" id="div-form-log-popup-entermkey">
+						<span id="span-form-log-popup-entermkey">error</span>
+					</div>
+				</form>
+				<button class="but-main-pop-grp4" id="but-entermkey-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- settings list keys start -->
+		<div id="div-popup-listkeys" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="rlist-popup">
+					<div id="div-rlist-listkeys" class="div-rlist-popup">
+						<div class="div-rlist-popup-row">
+							<input id="inp-listkeys-key1" name="inp-listkeys-key" type="radio" value="" required>
+							<label id="lbl-listkeys-key1" for="inp-listkeys-key1">
+								<strong>You see this because no key has been added yet.</strong>
+								<span>Here could be your first key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-listkeys-key2" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-listkeys-key2" for="inp-listkeys-key2">
+								<strong>Please go to SETTINGS menu and add some key first.</strong>
+								<span>Here could be your second key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-listkeys-key3" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-listkeys-key3" for="inp-listkeys-key3">
+								<strong>Thanks meow!</strong>
+								<span>Here could be your third key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+						</div>
+						<button id="but-listkeys-next" class="but-list-next" type="button"><span>Next Keys</span></button>
+						<div id="div-listkeys-but">
+							<button id="but-listkeys-rem" type="button"><span>Remove Key</span></button>
+							<button id="but-listkeys-exp" type="button"><span>Export Key</span></button>
+						</div>
+					</div>
+
+				</form>
+			<button class="but-main-pop-grp4" id="but-listkeys-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- encrypt list keys start -->
+		<div id="div-popup-enc-listkeys" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="rlist-popup">
+					<div id="div-rlist-enc-listkeys" class="div-rlist-popup">
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-listkeys-key1" name="inp-listkeys-key" type="radio" value=""  required>
+							<label id="lbl-enc-listkeys-key1" for="inp-enc-listkeys-key1">
+								<strong>You see this because no key has been added yet.</strong>
+								<span>Here could be your first key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-listkeys-key2" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-enc-listkeys-key2" for="inp-enc-listkeys-key2">
+								<strong>Please go to SETTINGS menu and add some key first.</strong>
+								<span>Here could be your second key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-listkeys-key3" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-enc-listkeys-key3" for="inp-enc-listkeys-key3">
+								<strong>Thanks meow!</strong>
+								<span>Here could be your third key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+						</div>
+						<button id="but-enc-listkeys-next" type="button"><span>Next Keys</span></button>
+					</div>
+					<button id="but-enc-listkeys-select" type="button"><span>Select Key for Encryption</span></button>
+				</form>
+			<button class="but-main-pop-grp4" id="but-enc-listkeys-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- encrypt options start -->
+		<div id="div-popup-enc-targets" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="rlist-popup">
+					<div id="div-rlist-enc-targets" class="div-rlist-popup">
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-targets-opt1" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-enc-targets-opt1" for="inp-enc-targets-opt1">
+								<strong>You see this because no key has been added yet.</strong>
+								<span>Here could be your first key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-targets-opt2" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-enc-targets-opt2" for="inp-enc-targets-opt2">
+								<strong>Please go to SETTINGS menu and add some key first.</strong>
+								<span>Here could be your second key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-enc-targets-opt3" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-enc-targets-opt3" for="inp-enc-targets-opt3">
+								<strong>Thanks meow!</strong>
+								<span>Here could be your third key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<br>
+						</div>
+					</div>
+					<button id="but-enc-targets-next" type="button"><span>Next Keys</span></button>
+					<button id="but-enc-targets-select" type="button"><span>Select Target for Encryption</span></button>
+				</form>
+			<button class="but-main-pop-grp4" id="but-enc-targets-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- decrypt list keys start -->
+		<div id="div-popup-dec-listkeys" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="rlist-popup">
+					<div id="div-rlist-dec-listkeys" class="div-rlist-popup">
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-listkeys-key1" name="inp-listkeys-key" type="radio" value="" required>
+							<label id="lbl-dec-listkeys-key1" for="inp-dec-listkeys-key1">
+								<strong>You see this because no key has been added yet.</strong>
+								<span>Here could be your first key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-listkeys-key2" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-dec-listkeys-key2" for="inp-dec-listkeys-key2">
+								<strong>Please go to SETTINGS menu and add some key first.</strong>
+								<span>Here could be your second key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-listkeys-key3" name="inp-listkeys-key" type="radio" value="">
+							<label id="lbl-dec-listkeys-key3" for="inp-dec-listkeys-key3">
+								<strong>Thanks meow!</strong>
+								<span>Here could be your third key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<br>
+						</div>
+					</div>
+					<button id="but-dec-listkeys-next" type="button"><span>Next Keys</span></button>
+					<button id="but-dec-listkeys-select" type="button"><span>Select Key for Decryption</span></button>
+				</form>
+			<button class="but-main-pop-grp4" id="but-dec-listkeys-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- decrypt options start -->
+		<div id="div-popup-dec-targets" class="div-popup">
+			<header class="header-popup">
+				<!-- <span>head</span> -->
+			</header>
+			<main class="main-popup">
+				<form class="rlist-popup">
+					<div id="div-rlist-dec-targets" class="div-rlist-popup">
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-targets-opt1" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-dec-targets-opt1" for="inp-dec-targets-opt1">
+								<strong>You see this because no key has been added yet.</strong>
+								<span>Here could be your first key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-targets-opt2" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-dec-targets-opt2" for="inp-dec-targets-opt2">
+								<strong>Please go to SETTINGS menu and add some key first.</strong>
+								<span>Here could be your second key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<input id="inp-dec-targets-opt3" name="inp-targets-opt" type="radio" value="">
+							<label id="lbl-dec-targets-opt3" for="inp-dec-targets-opt3">
+								<strong>Thanks meow!</strong>
+								<span>Here could be your third key</span>
+							</label>
+						</div>
+						<div class="div-rlist-popup-row">
+							<br>
+						</div>
+					</div>
+					<button id="but-dec-targets-next" type="button"><span>Next Keys</span></button>
+					<button id="but-dec-targets-select" type="button"><span>Select Target for Decryption</span></button>
+				</form>
+			<button class="but-main-pop-grp4" id="but-dec-targets-back"><span>Back</span></button>
+			</main>
+			<footer class="footer-popup">
+				<div>
+					<!-- <span id="span-logger">foot</span> -->
+				</div>
+			</footer>
+		</div>
+		<!-- Decrypt tab end -->
+		<script src="../openpgp.min.js"></script>
+		<script src="popup.js"></script>
+	</body>
+</html>

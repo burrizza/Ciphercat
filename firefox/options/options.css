@@ -1,0 +1,91 @@
+/* style.css - fragments from wordpress (twentytwentythree) and bootstrap */
+@charset "UTF-8";
+:root {
+	--font-small-size:clamp(1.25rem, 1.25rem + ((1vw - 0.48rem) * 0.24), 1.475rem);
+	--font-default-size:clamp(1.75rem, 1.75rem + ((1vw - 0.48rem) * 0.24), 1.875rem);
+	--font-header-size:clamp(2.625rem, calc(2.625rem + ((1vw - 0.48rem) * 8.4135)), 3.25rem);
+	--font-sans-serif:
+	"Lucida Console",
+	"Liberation Mono",
+	"Courier New",
+	sans-serif;
+	--font-size-medium:clamp(1rem, 1rem + ((1vw - 0.48rem) * 0.24), 1.125rem);
+	--bar-height:calc(2.719rem, 2.719rem + ((1vw - 0.48rem) * 1.742), 3.625rem);
+	-webkit-text-size-adjust:100%;
+	-webkit-tap-highlight-color:transparent;
+}
+html {
+	height:100%;
+	box-sizing:border-box;
+}
+body {
+	height:100%;
+	width:20em;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	font-family:var(--font-sans-serif);
+	font-size:var(--font-default-size);
+	font-weight:400;
+	line-height:1.5;
+	color: #f2f2f2;
+	background-color:#010101;
+	
+}
+* {
+	box-sizing: inherit;
+}
+button:hover {
+	background-color: #21bf73;
+}
+button span {
+	cursor: pointer;
+	display: inline:block;
+	position: relative;
+	transition: .5s;
+}
+button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	left: -2rem;
+	transition: 0.5s;
+}
+button:hover span {
+	top: 0;
+	padding-left: 1.5rem;
+}
+button:hover span:after {
+	opacity: 1;
+	left: 0;
+}
+.div-form-options {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+}
+.div-form-options-row {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	flex: 0 0 auto;
+}
+.div-form-options-row label {
+	display:inline-block;
+	width:100%;
+}
+.div-form-options-row input {
+	display:block;
+	width:100%;
+	padding: .4rem .5rem;
+	border: 1px solid #C0C0C0;
+	border-radius: .35rem;
+	font-size: var(--font-small-size);
+}
+.div-form-log {
+	background-color: #700000;
+	display: none;
+}
+.div-form-log span {
+	font-size: 0.7em;
+}
