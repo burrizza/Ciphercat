@@ -13,8 +13,8 @@ Thanks to all developers and please let me know if I made something wrong or you
 * Use a Masterkey (which is kept in memory only) to encrypt and decrypt all locally stored data.
 * Use your clipboard for easy and quick cryptography.
 * Use an automatic encryption and decryption feature for:
-	- wordpress (ever wanted make a blog that no one can read, this is your chance!)
-	- twitter **(in active development)** (This enables a private user group feature. Eat this, bird!)
+	- wordpress (ever wanted make a blog that no one can read, **this is your chance!**)
+	- twitter **(in active development)** (This enables a private user group feature. **Eat this, bird!**)
 	- **more coming**
 
 
