@@ -125,7 +125,7 @@ button:hover {
 }
 button span {
 	cursor: pointer;
-	display: inline:block;
+	display: inline-block;
 	position: relative;
 	transition: .5s;
 }
