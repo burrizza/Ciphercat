@@ -22,3 +22,35 @@ Thanks to all developers and please let me know if I made something wrong or you
 ## Platforms
 
 Currently this add-on exists for Firefox only.
+
+
+## Usage
+
+* Installation
+You can install the add-on manually, or hopefully through [addons.mozilla.org](https://addons.mozilla.org/addon/ciphercat/).
+* Navigate to **Settings** and setup your Masterkey
+After Installation you should be asked to setup a masterkey. Keep this key secure, because all of your internal stored data will **not be accessible without it anymore**.
+After the successful verification with your Masterkey, the key will be kept in memory for the current session. Please consider to close your Firefox before leaving your device alone.
+* Navigate to **Settings** > **Add Key**
+Now it is time to add some key bundles! A key bundle consists out of the following fields:
+	Name		-> Name of the key bundle
+	Description	-> You can add some short description about the usage of the key bundle.
+	Passphrase	-> Must be a secure password. It is used to encrypt your Private Key internally. Without it, your Private Key could not be used anymore for decryption.
+	Private Key	-> This key should kept (surprise) PRIVATE. It could be used to **decrypt** data, that has been encrypted by using the **corresponding Public Key** before.
+	Public Key	-> This key could kept (guess what) PUBLIC. It could only be used to **encrypt** data.
+
+Use **Generate Keys** to generate fresh randomly keys. You can also add already existing keys by 
+	* using the context menu **Import Keys using a JSON-File**(right-click), 
+	* using **Paste JSON** to add i.e. previously stored keys.
+* Navigate to **Settings** > **List Keys**
+Now you can see your previously added key. You should export and store it to a save place. But please be aware: **Exported data is not encrypted anymore, which means that your Passphrase is readable by everyone!**
+* Navigate to **Encrypt**
+Select a key you want to take for encryption. This key is stored temporally and used for context-menu actions after clicking **Select Key for Encryption**. It is possible to use someones Public Key for example, to send him an encrypted message.
+* Navigate to **Decrypt**
+Select a key you want to take for decryption. This key is stored temporally and used for context-menu actions after clicking **Select Key for Decryption**.
+* Context-Menu > **Ciphercat** > **Encrypt to Clipboard**
+Select some text first and activate then the context menu with right-click.
+* Navigate to **Encrypt** > **Select Key for Encryption** > **Select Target for Encryption**
+This activates the automatic encryption feature for wordpress sites.
+* Navigate to **Decrypt** > **Select Key for Decryption** > **Select Target for Decryption**
+This activates the automatic decryption feature for wordpress sites.
