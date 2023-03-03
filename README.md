@@ -27,7 +27,7 @@ Currently this add-on exists for Firefox only.
 ## Usage
 
 1. Installation
-You can install the add-on manually, or hopefully through [addons.mozilla.org](https://addons.mozilla.org/addon/ciphercat/).
+You can install the add-on manually, or using [addons.mozilla.org](https://addons.mozilla.org/addon/ciphercat/).
 2. Navigate to **Settings** and setup your Masterkey
 After Installation you should be asked to setup a masterkey. Keep this key secure, because all of your internal stored data will **not be accessible without it anymore**. After the successful verification with your Masterkey, the key will be kept in memory for the current session. Please consider to close your Firefox before leaving your device alone.
 3. Navigate to **Settings** > **Add Key**
