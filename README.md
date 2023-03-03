@@ -22,4 +22,4 @@ Thanks to all developers and please let me know if I made something wrong or you
 
 ## Platforms
 
-Currently this add-on exist for Firefox only.
+Currently this add-on exists for Firefox only.
