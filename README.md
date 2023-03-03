@@ -22,4 +22,4 @@ Thanks to all developers and please let me know if I made something wrong or you
 
 ## Platforms
 
-Currently this add-on only exist for Firefox but it should be easy to port it to Chrome and this could happen in near future. Plans to integrate the service in some Android app also exist.
+Currently this add-on only exist for Firefox only.
