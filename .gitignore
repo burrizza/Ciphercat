@@ -1,0 +1,4 @@
+# ignore releases
+releases/
+# ignore local manifest
+manifest.json.local
