@@ -3,7 +3,7 @@
 	"name": "Ciphercat",
 	"description": "Adds quick and easy encryption and decryption to your browser.",
 	"homepage_url": "https://github.com/burrizza/Ciphercat",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"permissions": [
 		"storage", 
 		"downloads", 
