@@ -923,7 +923,7 @@ function registerEventListeners() {
 			console.log('[INFO] (popup script) injected encryption into tabs.');
 		})
 		.catch((err) => {
-			showErrorDiv(err);
+			toggleFeedback('', 'info', 'Info: No automatic action possible on this site.');
 			console.error('[ERROR] (popup script) could not inject encryption in tabs:');
 			console.error(err);
 		});
